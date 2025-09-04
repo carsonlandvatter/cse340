@@ -3,4 +3,128 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
 }
+
+:root {
+  --heading-fonts: "Bebas Neue", sans-serif;
+  --text-fonts: "Montserrat", sans-serif;
+}
+
+body {
+  justify-self: center;
+  background-color: white;
+  position: relative;
+  margin: 0 auto;
+  max-width: 840px;
+  font-family: var(--text-fonts);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#siteName {
+  font-size: xx-large;
+  text-decoration: none;
+  font-family: var(--heading-fonts);
+  color: black;
+}
+
+#tools {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 1.25rem;
+  padding: 20px;
+}
+
+#vehicle {
+  display: block;
+  margin: 0 auto;
+}
+
+#vehicle-summary {
+  background-color: rgba(255, 255, 255, 0.507);
+  position: absolute;
+  top: 175px;
+  left: 10px;
+  margin-left: 10px;
+}
+
+#vehicle-summary h2 {
+  color: black;
+}
+
+#vehicle-summary p {
+  color: black;
+  font-size: 0.8rem;
+  margin: 5px;
+}
+
+#vehicle-summary button {
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 5px;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+#reviews {
+  margin: 10px;
+}
+
+#reviews h2 {
+  padding: 10px;
+}
+
+#upgrades h2 {
+  margin: 10px;
+}
+
+#upgrades {
+  margin: 10px;
+}
+
+#figures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+figure {
+  text-align: center;
+  margin: 5px;
+}
+
+figure img {
+  height: 87px;
+  width: 140px;
+  background-color: red;
+  padding: 10px 40px 10px 40px;
+  border: 1px solid black;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+
+
