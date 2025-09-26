@@ -1,12 +1,20 @@
 @media only screen and (min-width: 1024px) {
 
     html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
         background-image: url(/images/site/checkerboard.jpg);
     }
+
     body {
+        height: 100%;
+        display: block;
+        align-self: center;
+        width: 100%;
         border: 5px solid red;
         border-radius: 20px;
-        margin-top: 10rem;
     }
 
 
@@ -25,4 +33,9 @@
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
+
+    .vehicle-detail img {
+        width: auto;
+        height: auto;
+      }
 }
