@@ -8,15 +8,20 @@
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const pool = require('./database/')
-const accountRoute = require("./routes/accounRoute")
 const utilities = require("./utilities/")
-const inventoryRoute = require("./routes/inventoryRoute")
-const errorRoute = require("./routes/errorRoute")
 const baseController = require("./controllers/baseController")
+const env = require("dotenv").config()
+
+//Load core dependencies
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
-const env = require("dotenv").config()
 const app = express()
+
+
+//Importing Routes with require statements
+const accountRoute = require("./routes/accounRoute")
+const inventoryRoute = require("./routes/inventoryRoute")
+const errorRoute = require("./routes/errorRoute")
 const static = require("./routes/static")
 
 //Tell express to serve files from /public

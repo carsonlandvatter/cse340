@@ -33,4 +33,7 @@ invCont.buildByInvId = async function ( req, res, next) {
   })
 }
 
+//Build Management view
+
+
 module.exports = invCont
