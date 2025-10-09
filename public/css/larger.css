@@ -4,12 +4,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
         background-image: url(/images/site/checkerboard.jpg);
     }
 
     body {
-        height: 100%;
+        max-height: fit-content;
         display: block;
         align-self: center;
         width: 100%;
