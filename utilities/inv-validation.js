@@ -105,4 +105,34 @@ const checkVehicleData = async (req, res, next) => {
     next()
 }
 
-module.exports = { classificationRules, checkClassificationData, checkVehicleData, vehicleRules }
+//Check vehicle data and return errors to edit view
+const checkUpdateData = async (req, res, next) => {
+    const { classification_id, inv_id, inv_make, inv_model, inv_description, inv_image, inv_thumbnail, inv_price, inv_year, inv_miles, inv_color } = req.body
+
+    const errors = validationResult(req)
+    let nav = await utilities.getNav()
+    const classifications = await require("../models/inventory-model").getClassifications()
+
+    if (!errors.isEmpty()) {
+        return res.render("./inventory/edit-inventory", {
+            title: "Edit Inventory",
+            nav,
+            classifications,
+            errors: errors.array(),
+            classification_id,
+            inv_id,
+            inv_make,
+            inv_model,
+            inv_description,
+            inv_image,
+            inv_thumbnail,
+            inv_price,
+            inv_year,
+            inv_miles,
+            inv_color
+        })
+    }
+    next()
+}
+
+module.exports = { classificationRules, checkClassificationData, checkVehicleData, vehicleRules, checkUpdateData }

@@ -11,6 +11,7 @@ const pool = require('./database/')
 const utilities = require("./utilities/")
 const baseController = require("./controllers/baseController")
 const env = require("dotenv").config()
+const cookieParser = require("cookie-parser")
 
 //Load core dependencies
 const express = require("express")
@@ -50,6 +51,12 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+
+//Cookie parser middleware
+app.use(cookieParser())
+
+//Check Token Middleware
+app.use(utilities.checkJWTToken)
 
 /* View Engine and Templates
  *************************/
