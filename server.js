@@ -64,6 +64,13 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
 
+//Make login info available to all views
+app.use((req, res, next) => {
+  res.locals.loggedin = req.session.loggedin ? true : false
+  res.locals.firstname = req.session.accountData ? req.session.accountData.account_firstname : null
+  next()
+})
+
 /* ***********************
  * Routes
  *************************/

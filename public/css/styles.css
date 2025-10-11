@@ -33,9 +33,20 @@ header {
   color: black;
 }
 
-#tools {
+.tools {
   color: black;
   text-decoration: none;
+  list-style-type: none;
+}
+
+#tools-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#tools-list li {
+  list-style-type: none;
 }
 
 nav ul {

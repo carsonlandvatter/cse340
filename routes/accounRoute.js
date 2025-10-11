@@ -23,4 +23,29 @@ router.post(
     accountController.accountLogin
   )
 
+// Logout route
+router.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.clearCookie("jwt")
+    res.redirect("/")
+  })
+})
+
+//Route to build edit account view
+router.get("/update/:account_id", utilities.checkLogin, accountController.buildEditAccount);
+
+//Process account info edit
+router.post(
+  "/update-info",
+  utilities.checkLogin,
+  accountController.updateAccountInfo
+)
+
+//Process account password update
+router.post(
+  "/update-password",
+  utilities.checkLogin,
+  accountController.updatePassword
+)
+
 module.exports = router;
